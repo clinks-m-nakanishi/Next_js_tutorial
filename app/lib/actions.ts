@@ -113,8 +113,6 @@ export async function updateInvoice(
 
 // 請求書削除
 export async function deleteInvoice(id: string) {
-    throw new Error('Failed to Delete Invoice');
-
     await sql`DELETE FROM invoices WHERE id = ${id}`;
     revalidatePath('/dashboard/invoices');
 }
